@@ -1,138 +1,138 @@
 {
   "hunan": {
-    "area": "»ªÖĞ",
-    "name": "ºşÄÏ"
+    "area": "åä¸­",
+    "name": "æ¹–å—"
   },
   "hubei": {
-    "area": "»ªÖĞ",
-    "name": "ºş±±"
+    "area": "åä¸­",
+    "name": "æ¹–åŒ—"
   },
   "zhejiang": {
-    "area": "»ª¶«",
-    "name": "Õã½­"
+    "area": "åä¸œ",
+    "name": "æµ™æ±Ÿ"
   },
   "henan": {
-    "area": "»ªÖĞ",
-    "name": "ºÓÄÏ"
+    "area": "åä¸­",
+    "name": "æ²³å—"
   },
   "anhui": {
-    "area": "»ª¶«",
-    "name": "°²»Õ"
+    "area": "åä¸œ",
+    "name": "å®‰å¾½"
   },
   "guangdong": {
-    "area": "»ªÄÏ",
-    "name": "¹ã¶«"
+    "area": "åå—",
+    "name": "å¹¿ä¸œ"
   },
   "sichuan": {
-    "area": "Î÷ÄÏ",
-    "name": "ËÄ´¨"
+    "area": "è¥¿å—",
+    "name": "å››å·"
   },
   "jiangxi": {
-    "area": "»ª¶«",
-    "name": "½­Î÷"
+    "area": "åä¸œ",
+    "name": "æ±Ÿè¥¿"
   },
   "shandong": {
-    "area": "»ª¶«",
-    "name": "É½¶«"
+    "area": "åä¸œ",
+    "name": "å±±ä¸œ"
   },
   "shanghai": {
-    "area": "»ª¶«",
-    "name": "ÉÏº£"
+    "area": "åä¸œ",
+    "name": "ä¸Šæµ·"
   },
   "heilongjiang": {
-    "area": "¶«±±",
-    "name": "ºÚÁú½­"
+    "area": "ä¸œåŒ—",
+    "name": "é»‘é¾™æ±Ÿ"
   },
   "fujian": {
-    "area": "»ª¶«",
-    "name": "¸£½¨"
+    "area": "åä¸œ",
+    "name": "ç¦å»º"
   },
   "beijing": {
-    "area": "»ª±±",
-    "name": "±±¾©"
+    "area": "ååŒ—",
+    "name": "åŒ—äº¬"
   },
   "hebei": {
-    "area": "»ª±±",
-    "name": "ºÓ±±"
+    "area": "ååŒ—",
+    "name": "æ²³åŒ—"
   },
   "guangxi": {
-    "area": "»ªÄÏ",
-    "name": "¹ãÎ÷"
+    "area": "åå—",
+    "name": "å¹¿è¥¿"
   },
   "jiangsu": {
-    "area": "»ª¶«",
-    "name": "½­ËÕ"
+    "area": "åä¸œ",
+    "name": "æ±Ÿè‹"
   },
   "chongqing": {
-    "area": "Î÷ÄÏ",
-    "name": "ÖØÇì"
+    "area": "è¥¿å—",
+    "name": "é‡åº†"
   },
   "xianggang": {
-    "area": "»ªÄÏ",
-    "name": "Ïã¸Û"
+    "area": "åå—",
+    "name": "é¦™æ¸¯"
   },
   "yunnan": {
-    "area": "Î÷ÄÏ",
-    "name": "ÔÆÄÏ"
+    "area": "è¥¿å—",
+    "name": "äº‘å—"
   },
   "liaoning": {
-    "area": "¶«±±",
-    "name": "ÁÉÄş"
+    "area": "ä¸œåŒ—",
+    "name": "è¾½å®"
   },
   "xinjiang": {
-    "area": "Î÷±±",
-    "name": "ĞÂ½®"
+    "area": "è¥¿åŒ—",
+    "name": "æ–°ç–†"
   },
   "shanxi": {
-    "area": "»ª±±",
-    "name": "É½Î÷"
+    "area": "ååŒ—",
+    "name": "å±±è¥¿"
   },
   "guizhou": {
-    "area": "Î÷ÄÏ",
-    "name": "¹óÖİ"
+    "area": "è¥¿å—",
+    "name": "è´µå·"
   },
   "hainan": {
-    "area": "»ªÄÏ",
-    "name": "º£ÄÏ"
+    "area": "åå—",
+    "name": "æµ·å—"
   },
   "tianjin": {
-    "area": "»ª±±",
-    "name": "Ìì½ò"
+    "area": "ååŒ—",
+    "name": "å¤©æ´¥"
   },
   "shanxis": {
-    "area": "Î÷±±",
-    "name": "ÉÂÎ÷"
+    "area": "è¥¿åŒ—",
+    "name": "é™•è¥¿"
   },
   "jilin": {
-    "area": "¶«±±",
-    "name": "¼ªÁÖ"
+    "area": "ä¸œåŒ—",
+    "name": "å‰æ—"
   },
   "gansu": {
-    "area": "Î÷±±",
-    "name": "¸ÊËà"
+    "area": "è¥¿åŒ—",
+    "name": "ç”˜è‚ƒ"
   },
   "qinghai": {
-    "area": "Î÷±±",
-    "name": "Çàº£"
+    "area": "è¥¿åŒ—",
+    "name": "é’æµ·"
   },
   "aomen": {
-    "area": "»ªÄÏ",
-    "name": "°ÄÃÅ"
+    "area": "åå—",
+    "name": "æ¾³é—¨"
   },
   "neimenggu": {
-    "area": "Î÷±±",
-    "name": "ÄÚÃÉ¹Å"
+    "area": "è¥¿åŒ—",
+    "name": "å†…è’™å¤"
   },
   "ningxia": {
-    "area": "Î÷±±",
-    "name": "ÄşÏÄ"
+    "area": "è¥¿åŒ—",
+    "name": "å®å¤"
   },
   "xizang": {
-    "area": "Î÷ÄÏ",
-    "name": "Î÷²Ø"
+    "area": "è¥¿å—",
+    "name": "è¥¿è—"
   },
   "taiwan": {
-    "area": "»ª¶«",
-    "name": "Ì¨Íå"
+    "area": "åä¸œ",
+    "name": "å°æ¹¾"
   }
 }
