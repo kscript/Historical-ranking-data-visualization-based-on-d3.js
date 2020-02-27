@@ -75,6 +75,8 @@
   // 偏移量
   offset: 350,
 
+  left_offset: 0,
+
   // 长度小于display_barInfo的bar将不显示barInfo。
   // Hide barInfo if bar is shorter than barInfo
   display_barInfo: 0,

@@ -14,8 +14,22 @@ $("#inputfile").change(function () {
   var r = new FileReader();
   r.readAsText(this.files[0], config.encoding);
   r.onload = function () {
+    var custom = {};
+    // csv自定义配置
+    var result = this.result.replace(/(\n|)---[\n\r]+([\s\S]+)[\n\r]+---(\n|)/, function(s, $1, $2){
+      try{
+        custom = jsyaml.load($2)
+      } catch(e) {
+        console.log([e, $2])
+      }
+      return ''
+    });
+    window.customConfig = custom;
+    Object.assign(config, window.customConfig || {})
     //读取完成后，数据保存在对象的result属性中
-    var data = d3.csvParse(this.result);
+    // var data = d3.csvParse(result.replace(/\/\*[\s\S]*\*\//g,'').replace(/[\n\r]+/g, '\n'));
+    // csv注释
+    var data = d3.csvParse((result+'\n').replace(/(#(.*?)[\n\r])/g, '').replace(/[\n\r]+/g, '\n').replace(/^\s+|\s+$/g, ''));
     try {
       draw(data);
     } catch (error) {
@@ -115,6 +129,7 @@ function draw(data) {
   var offset = config.offset;
   var animation = config.animation;
   var deformat = config.deformat;
+  var left_offset = config.left_offset;
   config.imgs = Object.assign(config.imgs, external_imgs);
 
   const margin = {
@@ -142,7 +157,6 @@ function draw(data) {
   //var dateLabel_y = height - margin.top - margin.bottom - 32;;
   const xValue = d => Number(d.value);
   const yValue = d => d.name;
-
   const g = svg
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -157,12 +171,21 @@ function draw(data) {
     .attr("x", innerWidth / 2)
     .attr("y", 100);
 
-  var xScale = d3.scaleLinear();
+  var _xScale = d3.scaleLinear();
   if (use_semilogarithmic_coordinate) {
-    xScale = d3.scalePow().exponent(0.5);
+    _xScale = d3.scalePow().exponent(0.5);
   } else {
-    xScale = d3.scaleLinear();
+    _xScale = d3.scaleLinear();
   }
+  var xScale = _xScale
+  // function xScale() {
+  //   let res = _xScale.apply(this, arguments);
+  //   console.log(res, arguments);
+  //   return res;
+  // }
+  // for(let i in _xScale) {
+  //   xScale[i] = _xScale[i]
+  // }
   const yScale = d3
     .scaleBand()
     .paddingInner(0.3)
@@ -217,7 +240,7 @@ function draw(data) {
   var topLabel = g
     .insert("text")
     .attr("class", "topLabel")
-    .attr("x", item_x)
+    .attr("x", item_x + left_offset)
     .attr("y", text_y);
 
   function dataSort() {
@@ -305,7 +328,7 @@ function draw(data) {
     var topInfo = g
       .insert("text")
       .attr("class", "growth")
-      .attr("x", 0)
+      .attr("x", left_offset)
       .attr("y", text_y)
       .text(itemLabel);
 
@@ -507,7 +530,6 @@ function draw(data) {
       .attr("y", 0)
       .attr("width", d => xScale(xValue(d)))
       .attr("fill-opacity", 1);
-
     if (config.rounded_rectangle) {
       d3.selectAll("rect").attr("rx", 13);
     }
@@ -649,7 +671,7 @@ function draw(data) {
       .transition("2")
       .duration(2990 * interval_time)
       .ease(d3.easeLinear);
-
+    
     barUpdate
       .select("rect")
       .style("fill", d => getColor(d))

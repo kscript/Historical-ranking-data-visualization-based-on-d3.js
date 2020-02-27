@@ -1,0 +1,138 @@
+{
+  "hunan": {
+    "area": "华中",
+    "name": "湖南"
+  },
+  "hubei": {
+    "area": "华中",
+    "name": "湖北"
+  },
+  "zhejiang": {
+    "area": "华东",
+    "name": "浙江"
+  },
+  "henan": {
+    "area": "华中",
+    "name": "河南"
+  },
+  "anhui": {
+    "area": "华东",
+    "name": "安徽"
+  },
+  "guangdong": {
+    "area": "华南",
+    "name": "广东"
+  },
+  "sichuan": {
+    "area": "西南",
+    "name": "四川"
+  },
+  "jiangxi": {
+    "area": "华东",
+    "name": "江西"
+  },
+  "shandong": {
+    "area": "华东",
+    "name": "山东"
+  },
+  "shanghai": {
+    "area": "华东",
+    "name": "上海"
+  },
+  "heilongjiang": {
+    "area": "东北",
+    "name": "黑龙江"
+  },
+  "fujian": {
+    "area": "华东",
+    "name": "福建"
+  },
+  "beijing": {
+    "area": "华北",
+    "name": "北京"
+  },
+  "hebei": {
+    "area": "华北",
+    "name": "河北"
+  },
+  "guangxi": {
+    "area": "华南",
+    "name": "广西"
+  },
+  "jiangsu": {
+    "area": "华东",
+    "name": "江苏"
+  },
+  "chongqing": {
+    "area": "西南",
+    "name": "重庆"
+  },
+  "xianggang": {
+    "area": "华南",
+    "name": "香港"
+  },
+  "yunnan": {
+    "area": "西南",
+    "name": "云南"
+  },
+  "liaoning": {
+    "area": "东北",
+    "name": "辽宁"
+  },
+  "xinjiang": {
+    "area": "西北",
+    "name": "新疆"
+  },
+  "shanxi": {
+    "area": "华北",
+    "name": "山西"
+  },
+  "guizhou": {
+    "area": "西南",
+    "name": "贵州"
+  },
+  "hainan": {
+    "area": "华南",
+    "name": "海南"
+  },
+  "tianjin": {
+    "area": "华北",
+    "name": "天津"
+  },
+  "shanxis": {
+    "area": "西北",
+    "name": "陕西"
+  },
+  "jilin": {
+    "area": "东北",
+    "name": "吉林"
+  },
+  "gansu": {
+    "area": "西北",
+    "name": "甘肃"
+  },
+  "qinghai": {
+    "area": "西北",
+    "name": "青海"
+  },
+  "aomen": {
+    "area": "华南",
+    "name": "澳门"
+  },
+  "neimenggu": {
+    "area": "西北",
+    "name": "内蒙古"
+  },
+  "ningxia": {
+    "area": "西北",
+    "name": "宁夏"
+  },
+  "xizang": {
+    "area": "西南",
+    "name": "西藏"
+  },
+  "taiwan": {
+    "area": "华东",
+    "name": "台湾"
+  }
+}

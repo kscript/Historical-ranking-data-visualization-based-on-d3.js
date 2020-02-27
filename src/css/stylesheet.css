@@ -39,7 +39,7 @@ input {
 
     fill: #5C5C5C;
     display: table-cell;
-    font-size: 60pt;
+    font-size: 40pt;
     font-weight: bold;
     font-family: "Fira Code", "Source Han Sans CN"
 }
@@ -62,7 +62,7 @@ input {
 }
 
 .topLabel {
-    fill: #5C5C5C;
+    fill: orange;
     font-weight: bold;
     font-size: 40pt;
     font-family: "Fira Code", "Source Han Sans CN"
