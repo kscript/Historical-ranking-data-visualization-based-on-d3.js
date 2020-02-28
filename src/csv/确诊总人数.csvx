@@ -1,6 +1,6 @@
 ---
 title: 确诊总人数
-itemLabel: 确诊总人数
+itemLabel: 确诊总人数最多
 ---
 type,name,value,date
 #华中,湖北,41,01月11日

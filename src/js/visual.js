@@ -8,7 +8,21 @@
 
 // import * as d3 from 'd3';
 // require("./stylesheet.css");
-
+var csvData;
+function startDraw() {
+  if (csvData) {
+    try {
+      draw(csvData);
+    } catch (error) {
+      alert(error);
+    }
+  }
+}
+$(window).on("keydown", function(e){
+  if (/F10/i.test(e.key) && e.ctrlKey) {
+    startDraw()
+  }
+})
 $("#inputfile").change(function () {
   $("#inputfile").attr("hidden", true);
   var r = new FileReader();
@@ -29,12 +43,7 @@ $("#inputfile").change(function () {
     //读取完成后，数据保存在对象的result属性中
     // var data = d3.csvParse(result.replace(/\/\*[\s\S]*\*\//g,'').replace(/[\n\r]+/g, '\n'));
     // csv注释
-    var data = d3.csvParse((result+'\n').replace(/(#(.*?)[\n\r])/g, '').replace(/[\n\r]+/g, '\n').replace(/^\s+|\s+$/g, ''));
-    try {
-      draw(data);
-    } catch (error) {
-      alert(error);
-    }
+    csvData = d3.csvParse((result+'\n').replace(/(#(.*?)[\n\r])/g, '').replace(/[\n\r]+/g, '\n').replace(/^\s+|\s+$/g, ''));
   };
 });
 

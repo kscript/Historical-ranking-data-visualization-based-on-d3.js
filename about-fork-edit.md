@@ -2,19 +2,21 @@
 当前项目是基于 [Historical-ranking-data-visualization-based-on-d3.js](https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js) 创建的一个分支, 对于原项目进行了部分改动
 
 ## 改动说明
-对csv文件进行了扩展, 扩展后的文件后缀为csvx(非标准的、自定义的文件格式)  
-csvx文件, 可以看作是: 支持写入配置、添加注释的csv文件  
-写入配置的方式:  
-``` yaml
----
-max_number: 20
----
-```
-添加注释方式:
-``` yaml
-# 注释
-```
-> 以上都是参照了yaml文件的写法, 所以可以在编辑器里将csvx格式的文件关联为yaml
+1. 对csv文件进行了扩展, 扩展后的文件后缀为csvx(非标准的、自定义的文件格式)  
+    csvx文件, 可以看作是: 支持写入配置、添加注释的csv文件  
+    写入配置的方式:  
+    ``` yaml
+    ---
+    max_number: 20
+    ---
+    ```
+    添加注释方式:
+    ``` yaml
+    # 注释
+    ```
+    > 以上都是参照了yaml文件的写法, 所以可以在编辑器里将csvx格式的文件关联为yaml
+2. 增加快捷键
+    选定csvx文件后, 需要使用快捷键 Ctrl + F10 才能开始绘制(方便录屏)
 ## 查看项目
 本地查看当前项目步骤:  
 ``` js

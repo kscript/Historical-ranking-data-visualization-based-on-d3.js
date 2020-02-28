@@ -13,7 +13,9 @@ input {
     top: 50%;
     left: 45%;
 }
-
+#svg {
+    margin: -4px;
+}
 .domain {
     display: none;
 }
