@@ -98,7 +98,8 @@ input {
 }
 
 .days {
-    fill: r#5C5C5C;
+    display: none;
+    fill: #5C5C5C;
     font-weight: bold;
     font-size: 40pt;
     font-family: "Fira Code", "Source Han Sans CN"

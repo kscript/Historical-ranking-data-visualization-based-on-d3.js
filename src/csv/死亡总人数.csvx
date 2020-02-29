@@ -1,6 +1,6 @@
 ---
 title: 死亡总人数
-itemLabel: 死亡总人数
+itemLabel: 死亡总人数 最多：
 ---
 type,name,value,date
 #华中,湖北,1,01月11日
