@@ -18,7 +18,7 @@
 2. 增加快捷键
     选定csvx文件后, 需要使用快捷键 Ctrl + F10 才能开始绘制(方便录屏)
 ## 查看项目
-本地查看当前项目步骤:  
+1. 本地查看当前项目步骤:  
 ``` js
     // 1. 克隆项目到本地
     git clone https://github.com/kscript/Historical-ranking-data-visualization-based-on-d3.js.git
@@ -34,8 +34,12 @@
 
     // 4. 运行服务
     npm run serve
+
+    // 服务器运行后, 根据生成的地址, 打开页面 (生成的地址需手动加/src/index.html)
+    // http://127.0.0.1:8080/src/index.html
 ```
-在github上查看: 
+
+2. 在github上查看: 
 点击进入 [Historical-ranking-data-visualization-based-on-d3.js](https://kscript.github.io/Historical-ranking-data-visualization-based-on-d3.js/src/index.html)  
   
 打开页面后, 可以在弹出文件选择窗口时, 使用项目里的提供csvx文件查看效果: https://raw.githubusercontent.com/kscript/Historical-ranking-data-visualization-based-on-d3.js/master/src/csv/%E6%B2%BB%E6%84%88%E6%80%BB%E4%BA%BA%E6%95%B0.csvx (直接打开保存并选择保存的文件 或者 复制文件地址, 将其粘贴进左下方的 **文件名** 输入框, 然后选择右下方 **打开**)

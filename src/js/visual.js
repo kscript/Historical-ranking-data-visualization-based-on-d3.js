@@ -8,44 +8,6 @@
 
 // import * as d3 from 'd3';
 // require("./stylesheet.css");
-var csvData;
-function startDraw() {
-  if (csvData) {
-    try {
-      draw(csvData);
-    } catch (error) {
-      alert(error);
-    }
-  }
-}
-$(window).on("keydown", function(e){
-  if (/F10/i.test(e.key) && e.ctrlKey) {
-    startDraw()
-  }
-})
-$("#inputfile").change(function () {
-  $("#inputfile").attr("hidden", true);
-  var r = new FileReader();
-  r.readAsText(this.files[0], config.encoding);
-  r.onload = function () {
-    var custom = {};
-    // csv自定义配置
-    var result = this.result.replace(/(\n|)---[\n\r]+([\s\S]+)[\n\r]+---(\n|)/, function(s, $1, $2){
-      try{
-        custom = jsyaml.load($2)
-      } catch(e) {
-        console.log([e, $2])
-      }
-      return ''
-    });
-    window.customConfig = custom;
-    Object.assign(config, window.customConfig || {})
-    //读取完成后，数据保存在对象的result属性中
-    // var data = d3.csvParse(result.replace(/\/\*[\s\S]*\*\//g,'').replace(/[\n\r]+/g, '\n'));
-    // csv注释
-    csvData = d3.csvParse((result+'\n').replace(/(#(.*?)[\n\r])/g, '').replace(/[\n\r]+/g, '\n').replace(/^\s+|\s+$/g, ''));
-  };
-});
 
 function draw(data) {
   var date = [];
