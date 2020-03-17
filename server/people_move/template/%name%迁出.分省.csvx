@@ -1,0 +1,8 @@
+---
+itemLabel: %name%迁出目的地 Top1
+format: ",.2f"
+postfix: '%'
+item_x: 480
+dateLabel_x: 1180
+divide_by: name
+---

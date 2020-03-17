@@ -1,11 +1,19 @@
+function append() {
+
+}
+function playHead(done){
+    done()
+}
 function startDraw() {
-    if (app.csvData) {
-        try {
-            draw(app.csvData);
-        } catch (error) {
-            alert(error);
+    playHead(function(){
+        if (app.csvData) {
+            try {
+                draw(app.csvData);
+            } catch (error) {
+                alert(error);
+            }
         }
-    }
+    })
 }
 
 function resize() {

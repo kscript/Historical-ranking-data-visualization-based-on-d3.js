@@ -30,6 +30,7 @@ function draw(data) {
   var name_list = [];
   var changeable_color = config.changeable_color;
   var divide_changeable_color_by_type = config.divide_changeable_color_by_type;
+  var update_rate = config.update_rate;
   data
     .sort((a, b) => Number(b.value) - Number(a.value))
     .forEach(e => {
@@ -831,26 +832,33 @@ function draw(data) {
         });
     }
   }
-
-  var i = 0;
-  var p = config.wait;
-  var update_rate = config.update_rate;
-  var inter = setInterval(function next() {
-    // 空过p回合
-    while (p) {
-      p -= 1;
-      return;
-    }
-    currentdate = time[i];
-    getCurrentData(time[i]);
-    i++;
-
-    if (i >= time.length) {
-      window.clearInterval(inter);
-    }
-  }, baseTime * interval_time);
-  // setInterval(() => {
-  //     d3.transition()
-  //         .each(change)
-  // }, baseTime * update_rate * interval_time)
+  function keyframe(i) {
+    i = i || 0;
+    var p = config.wait;
+    var inter = setInterval(function next() {
+      // 空过p回合
+      while (p) {
+        p -= 1;
+        return;
+      }
+      currentdate = time[i];
+      getCurrentData(time[i]);
+      i++;
+  
+      if (i >= time.length) {
+        window.clearInterval(inter);
+      }
+    }, baseTime * interval_time);
+    // setInterval(() => {
+    //     d3.transition()
+    //         .each(change)
+    // }, baseTime * update_rate * interval_time)
+  }
+  keyframe()
+  console.log({
+    getCurrentData,
+    keyframe,
+    redraw,
+    change
+  })
 }

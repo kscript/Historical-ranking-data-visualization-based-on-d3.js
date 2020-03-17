@@ -1,0 +1,7 @@
+---
+itemLabel: %name%迁入来源地 Top1
+format: ",.2f"
+postfix: '%'
+item_x: 480
+dateLabel_x: 1180
+---
