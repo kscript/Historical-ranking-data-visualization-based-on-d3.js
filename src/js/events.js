@@ -3,14 +3,20 @@ resize();
 
 $(window).on("keydown", function (e) {
     if (!app.csvConfig.autoplay && /F10/i.test(e.key) && e.ctrlKey) {
-        startDraw();
+        if (typeof loadIllustration === 'function') {
+            loadIllustration(function() {
+                startDraw();
+            })
+        } else {
+            startDraw();
+        }
     }
 });
-
 $("#inputfile").change(function () {
     $("#inputfile").attr("hidden", true);
     var r = new FileReader();
-    r.readAsText(this.files[0], config.encoding);
+    var file = this.files[0]
+    r.readAsText(file, config.encoding);
     r.onload = function () {
         app.csvResult = this.result;
         var customConfig = {};
@@ -23,7 +29,10 @@ $("#inputfile").change(function () {
             }
             return ''
         });
-        app.csvConfig = Object.assign({}, customConfig);
+        app.csvConfig = Object.assign({
+            filename: file.name,
+            lastModified: file.lastModified
+        }, customConfig);
         delete customConfig.config;
         Object.assign(config, customConfig || {});
         // csv注释
