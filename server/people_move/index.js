@@ -16,26 +16,29 @@ const mkdirsSync = (dir) => {
     }
 }
 const getData = async (option, startDate = '2020-01-01') => {
-    var list = [];
-    var start = +new Date(startDate);
-    var end = +new Date();
-    var current = 0;
+    let list = [];
+    let start = +new Date(startDate);
+    let end = +new Date();
+    let current = 0;
+    let t = 0
     option = Object.assign({
         dt: 'province',
         id: 420000,
         type: 'move_out'
     }, option)
     while(start + current < end) {
-        var day = new Date(start + current);
-        var newOption = Object.assign({}, option || {}, {
+        let day = new Date(start + current);
+        let newOption = Object.assign({}, option || {}, {
             dateText: day.getFullYear() + '年' + (day.getMonth() + 1) + '月'+ day.getDate() + '日',
             date: [day.getFullYear(), ('0' + (day.getMonth() + 1)).slice(-2),  ('0' + day.getDate()).slice(-2)].join('')
         })
         current += 60 * 60 * 24 * 1000;
         list.push(new Promise(resolve => 
+            setTimeout(() => {
                 resolve(
                     move_map(newOption)
-                )
+                    )
+                }, t += 50)
             )
         )
     }
@@ -73,8 +76,10 @@ const move_map = async (opt) => {
                         list: []
                     })
                 }
-                console.log(url);
+                // console.log(url);
             });
+        }).on("error", (err) => {
+            console.log(err)
         });
     })
 }
@@ -85,8 +90,8 @@ const toCsv = async (list, opt) => {
         type: 'move_out'
     }, opt);
     let { id, dt, type, u} = opt;
-    var datas = await Promise.all(list);
-    var res = datas.map(({
+    let datas = await Promise.all(list);
+    let res = datas.map(({
             data,
             list
         }) => {
@@ -97,7 +102,7 @@ const toCsv = async (list, opt) => {
             data.dateText
         ].join(',')).join('\n')
     }).join('\n');
-    var pre = `# id:${id} dt:${dt} type:${type} u:${u}` + '\ntype,name,value,date\n';
+    let pre = `# id:${id} dt:${dt} type:${type} u:${u}` + '\ntype,name,value,date\n';
     if (u === 'province') {
         pre = pre.replace(/type,/, '');
         res = res.replace(/,,/g, ',');
@@ -123,7 +128,7 @@ const createDir = ([ name, id, province, defer ]) => {
             let csv = await toCsv(await getData(opt), opt);
             let text = data.toString().replace(/%name%/, name) + '\n' + csv;
             return new Promise(resolve => {
-                fs.writeFile(path.join(targetDir, targetName), text, (...rest) => {
+                fs.writeFile(path.join(targetDir, targetName + '.csvx'), text, (...rest) => {
                     setTimeout(resolve, defer || 0);
                 });
             })

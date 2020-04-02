@@ -1,3 +1,4 @@
+const readline = require('readline');
 const createDir = require('./').createDir
 const config = [];
 let rl = readline.createInterface(process.stdin, process.stdout);

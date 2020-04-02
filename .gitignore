@@ -1,4 +1,4 @@
 ﻿src/config_bak.js
-csv/people_move
+src/csv/people_move/
 node_modules
 .vscode
