@@ -31,6 +31,7 @@ function draw(data) {
   var changeable_color = config.changeable_color;
   var divide_changeable_color_by_type = config.divide_changeable_color_by_type;
   var update_rate = config.update_rate;
+  var colors = {}
   data
     .sort((a, b) => Number(b.value) - Number(a.value))
     .forEach(e => {
@@ -59,6 +60,13 @@ function draw(data) {
 
     if (d[divide_color_by] in config.color)
       return config.color[d[divide_color_by]];
+      else if (config.palette) {
+        return colors[
+          d[divide_color_by]
+        ] = colors[
+          d[divide_color_by]
+        ] || config.palette.shift()
+      }
     else {
       return d3.schemeCategory10[
         Math.floor(d[divide_color_by].charCodeAt() % 10)

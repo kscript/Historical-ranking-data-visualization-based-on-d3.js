@@ -35,6 +35,10 @@ $("#inputfile").change(function () {
         }, customConfig);
         delete customConfig.config;
         Object.assign(config, customConfig || {});
+        if (config.divide_color === 'palette') {
+            config._color = config.color
+            config.color = {}
+        }
         // csv注释
         app.csvData = d3.csvParse((result + '\n').replace(/(#(.*?)[\n\r])/g, '').replace(/[\n\r]+/g, '\n').replace(/^\s+|\s+$/g, ''));
     };

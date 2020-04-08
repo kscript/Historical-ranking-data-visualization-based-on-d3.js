@@ -70,35 +70,37 @@ function replaceContent(content, titles, config) {
 }
 
 function loadIllustration(done){
-    var config = app.csvConfig || {}
-    var titles = app.currentTitles = mergeTitlesConfig(null, config)
-    var className = titles.className instanceof Object ? titles.className : {}
-    var container = loadIllustration.container || document.createElement('div')
-    var cb = function() {
-        setTimeout(function () {
-            container.className = addClass(
-                removeClass(container.className, className.in),
-                className.out
-            )
-        }, 4e3)
-        typeof done === 'function' && done()
-    }
-    container.className = 'illustration-container animated'
-    if (titles instanceof Object) {
-        var box = document.createElement('div')
-        box.className = addClass(addClass('illustration-content animated', className.direct), className.in)
-        box.style.cssText = titles.style || ''
-        box.innerHTML = replaceContent('', titles, config)
-        container.innerHTML = ''
-        container.appendChild(box)
-        if (!loadIllustration.container) {
-            loadIllustration.container = container
-            document.body.appendChild(container)
+    return proxy('loadIllustration', arguments, function() {
+        var config = app.csvConfig || {}
+        var titles = app.currentTitles = mergeTitlesConfig(null, config)
+        var className = titles.className instanceof Object ? titles.className : {}
+        var container = loadIllustration.container || document.createElement('div')
+        var cb = function() {
+            setTimeout(function () {
+                container.className = addClass(
+                    removeClass(container.className, className.in),
+                    className.out
+                )
+            }, 4e3)
+            typeof done === 'function' && done()
         }
-        if (typeof titles.duration === 'number') {
-            setTimeout(cb, titles.duration)
-            return
+        container.className = 'illustration-container animated'
+        if (titles instanceof Object) {
+            var box = document.createElement('div')
+            box.className = addClass(addClass('illustration-content animated', className.direct), className.in)
+            box.style.cssText = titles.style || ''
+            box.innerHTML = replaceContent('', titles, config)
+            container.innerHTML = ''
+            container.appendChild(box)
+            if (!loadIllustration.container) {
+                loadIllustration.container = container
+                document.body.appendChild(container)
+            }
+            if (typeof titles.duration === 'number') {
+                setTimeout(cb, titles.duration)
+                return
+            }
         }
-    }
-    cb()
+        cb()
+    })
 }
